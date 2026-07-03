@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base target="_top">
+  <?!= include('style'); ?>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <h1>LuCADprint</h1>
+    <h2>Frunk Table Configurator</h2>
+  </div>
+
+  <div class="content">
+
+    <div class="left-panel">
+
+      <h3>1. Modell</h3>
+      <div id="modelContainer"></div>
+
+      <h3>2. Farbe</h3>
+      <div id="colorContainer"></div>
+
+      <h3>3. Optionen</h3>
+      <div id="optionContainer"></div>
+
+    </div>
+
+    <div class="right-panel">
+      <div class="preview-box">
+
+      <model-viewer
+          id="viewer"
+          src=""
+          camera-controls
+          auto-rotate
+          shadow-intensity="1"
+          style="width:100%; height:620px;">
+        </model-viewer>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+
+    <div id="price">Preis: 0 €</div>
+
+    <button class="button" onclick="createOrder()">
+      Auftrag erstellen
+    </button>
+
+    <!-- Für einen "Share Link"-Button ---
+      
+      <button class="button" onclick="copyShareLink()">
+      Link kopieren
+    </button> -->
+
+  </div>
+
+</div>
+
+<?!= include('script'); ?>
+
+</body>
+</html>
