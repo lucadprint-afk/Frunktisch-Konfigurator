@@ -1,0 +1,161 @@
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  padding:40px;
+  font-family:Inter, Arial, sans-serif;
+  background:#F5F5F5;
+  color:#222;
+}
+
+.container{
+  max-width:1400px;
+  margin:auto;
+  background:#fff;
+  border-radius:24px;
+  padding:40px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.header h1{
+  margin:0;
+  font-size:36px;
+}
+
+.header h2{
+  margin-top:8px;
+  font-weight:400;
+  color:#777;
+}
+
+.content{
+  display:grid;
+  grid-template-columns:340px 1fr;
+  gap:35px;
+  align-items:start;
+}
+
+.right-panel{
+  position:sticky;
+  top:40px;
+}
+
+/* STEPS VISUAL */
+
+h3.active-step{
+  font-weight:700;
+  color:#111;
+}
+
+h3.inactive-step{
+  color:#bbb;
+}
+
+/* CARDS */
+
+.card{
+  background:white;
+  border:1px solid #E3E3E3;
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:10px;
+  cursor:pointer;
+  transition:0.25s;
+  opacity:0;
+  transform:translateY(8px);
+}
+
+.card.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  border-color:#111;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card.selected{
+  border:2px solid #111;
+  background:#F7F7F7;
+}
+
+.card.selected::after{
+  content:"✓";
+  position:absolute;
+  top:10px;
+  right:12px;
+  font-weight:bold;
+}
+
+/* SHAKE */
+
+@keyframes shake{
+  0%{transform:translateX(0)}
+  25%{transform:translateX(-4px)}
+  50%{transform:translateX(4px)}
+  75%{transform:translateX(-4px)}
+  100%{transform:translateX(0)}
+}
+
+.shake{
+  animation:shake 0.35s;
+}
+
+/* PREVIEW */
+
+.preview-box{
+  height:620px;
+  border-radius:20px;
+  background:#FAFAFA;
+  border:1px solid #E6E6E6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#999;
+}
+
+/* FOOTER */
+
+.footer{
+  margin-top:35px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+#price{
+  font-size:28px;
+  font-weight:bold;
+}
+
+.button{
+  background:#111;
+  color:white;
+  border:none;
+  border-radius:14px;
+  padding:16px 34px;
+  cursor:pointer;
+}
+
+.button:hover{
+  transform:translateY(-2px);
+}
+
+@media(max-width:1000px){
+  .content{
+    grid-template-columns:1fr;
+  }
+
+  .right-panel{
+    position:relative;
+    top:auto;
+  }
+}
+
+</style>
